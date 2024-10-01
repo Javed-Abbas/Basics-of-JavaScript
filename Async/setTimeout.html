@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+
+    <script>
+        //setTimeout()
+        //This function work at once 
+        //for example
+        //When a user set-time for 5 second this function will print the value after 5 second 
+        //This function print the value only once
+
+
+
+        //This is the basic function 
+        setTimeout(function(){
+            // console.log("Javed");
+        }, 5000);
+
+
+
+        //THis is reference function
+        const refFunction = function(){
+            // console.log("Javed Abbas");
+        }
+        //function call
+        setTimeout(refFunction,5000)
+
+
+
+        //example
+
+        //change the text of h1-tag after 2 second?
+        const changeText = function(){
+            document.querySelector('h1').innerHTML = "Js Best series";
+        } 
+        //call the reference function 
+        // setTimeout(changeText,2000);
+        
+
+
+
+
+
+        //declear call-function in a variabe to stop the working of setTimeout() function
+        const changeME = setTimeout(changeText,2000);
+
+
+        //clearTimeout()
+        //This function will stop the working of setTimeout()
+
+        document.querySelector('#stop').addEventListener('click',function(){
+            clearTimeout(changeME)
+            console.log("STOPPED");
+            
+        })
+
+
+
+
+        //setInterval()
+    </script>
+</body>
+</html>

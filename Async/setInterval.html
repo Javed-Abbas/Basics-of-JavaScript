@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async| Set-Interval Function</title>
+</head>
+<body>
+    <h1 id="show">Javed Abbas</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+
+    <script>
+        //setInterval
+        //This function print the value infinite
+        //This is the basic function
+        setInterval(() => {
+            // console.log('Javed');
+        }, 2000);
+
+
+        
+        function updateName(str) {
+            console.log(str,Date.now());
+             
+        }
+
+        let intervalId;
+        document.querySelector('#start').addEventListener('click',function(){
+            intervalId = setInterval(updateName,1000,'Javed Abbas');
+            
+        })
+
+        document.querySelector('#stop').addEventListener('click',function(){
+            clearInterval(intervalId);
+            console.log('STOPPED');
+            
+        })
+
+        
+
+        
+        
+       
+
+        
+
+
+    </script>
+</body>
+</html>
