@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit And Remove Element In DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+
+
+    <script>
+        //best way to create TextNode in Dom
+        function addLanguage(LangName){
+            const li = document.createElement('li');
+            li.innerHTML = `${LangName}`;
+            document.querySelector('.language').appendChild(li).appendChild(li);
+        }
+        addLanguage("Python");
+        addLanguage("Java");
+        //Optimization way to create TextNode in DOM
+        function addOptiLanguage(LangName){
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(LangName));
+            document.querySelector('.language').appendChild(li);
+        }
+        addOptiLanguage('typeScript');
+
+        //How to Edit Nodes
+        const secondNode = document.querySelector('Li:nth-child(2)');
+        const newLi = document.createElement('li');
+        newLi.textContent = "Mojo";
+        secondNode.replaceWith(newLi);
+
+        const firstNode = document.querySelector('li:first-child');
+        firstNode.outerHTML= '<li>Java</li>'
+
+        //how to remove Element in DOm
+        const lang = document.querySelector('li:last-child')
+        lang.remove();
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Menipulation</title>
+    <style>
+        .bg_black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg_black">
+    <div>
+        <h1 id="title" class="heading">Javascript learning from youtube channel: Chai aur code! <span style="display: none;">text content</span></h1>
+        
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, velit!</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, velit!</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, velit!</h2>
+
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia, aliquam.</p>
+
+    </div>
+    <!--UnOrderd List-->
+    <ul>
+        <li class="list-item">one</li>
+        <li class="list-item">Two</li>
+        <li class="list-item">Three</li>
+    </ul>
+
+    <script>
+    //    const className = document.getElementById('title').className;         //we just get the Class-Name from this method
+    //    const id = document.getElementById('title').id;                //we just get the Id-name from this meth
+    //    const getAttribute = document.getElementById('title').getAttribute('id');   //we can get all attributes from this method like (Id and Class)
+    //    const setAttribute = document.getElementById('title').setAttribute('id','test heading');   //we can over-write on the previus id from this method like (Before Id = 'title' after Id = 'test and heading' and Class is also same like this)
+    //    console.log(id);
+
+    //    const title = document.getElementById('title');
+       //we can style everything in Dom like this method
+    //    title.style.backgroundColor = "red";
+    //    title.style.padding = "10px";
+    //    title.style.margin = "50px";
+        //we can check content inside the HTML_Tags from this method
+        // title.textContent;
+        // title.innerText;
+        // title.innerHTML;
+        //there are three ways to check content inside the HTML-tags
+        //there is different in TextContent and innerText?
+        // title.textContent; //agar ham html-tag ma aik span-tag len aur isme kuch text add kr den aur isko display=none kr den to textContent all-to-all text show krvaiyee ga 
+        // title.innerText;     //agar ham html-tag ma aik span-tag len aur isme kuch text add kr den aur isko display=none kr den to innerText just HTML_Tags wala text show krvaiyee ga span k ander wala text show nhi krwaiyee ga
+        // console.log(title);
+        
+        //This is about querySelector
+        // const qsTag = document.querySelector('h2'); //it will select just first tag of html like(there are so many h2 tags in html but it will select only first tag)
+        // const qsId = document.querySelector('#title'); //it select id 
+        // const qsClass = document.querySelector('.heading'); //it select class 
+        // console.log(selector);
+
+        // const UnOrderdList = document.querySelector('ul');
+        // const myUnOrderdList = document.querySelector('li');
+        // myUnOrderdList.style.color ="red";
+        // myUnOrderdList.style.backgroundColor ="blue";
+        // console.log(myUnOrderdList);
+
+        //This is about querySelectorAll
+        // const qsa = document.querySelectorAll('li');
+        // qsa[0].style.color='yellow';    //this will give NodeList on the NodeList we cannot use forEach loop and cannot style particular element without usng index value
+        //another method to style the element using forEach loop
+        // qsa.forEach((items)=>{
+        //     items.style.backgroundColor = "purple"
+        // })
+        // console.log(qsa); 
+
+        const listItem = document.getElementsByClassName('list-item');
+        //this method is not work because it give HTMLCollection but first convert it in an array than we can use this method
+        // listItem.forEach((li)=>{
+        //     li.style.color= "brown";
+        // })
+
+        //converting HTMLCollection into Array use this method
+        Array.from(listItem);
+        //Now we use forEach loop on Converted Array
+        listItem.forEach((li) => {
+            li.style.color= "orange"
+        });
+        console.log(listItem);
+
+    </script>
+</body>
+</html>     
